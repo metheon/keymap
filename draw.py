@@ -21,71 +21,159 @@ STYLE = """
         fill: #f6f8fa;
     }
 
-    .held {
+    .green {
         fill: #fdd;
+    }
+
+    .green {
+        fill: #dfd;
+    }
+
+    .purple {
+        fill: #ddf;
+    }
+
+    .yellow {
+        fill: #ffd;
+    }
+
+    .blue {
+        fill: #dff;
+    }
+
+    .pink {
+        fill: #fdf;
+    }
+
+    .grey {
+        fill: #ddd;
+    }
+
+    .red {
+        fill: #fdd;
+    }
+
+    .none {
+        fill: #fff;
+        fill-opacity: 0.0;
     }
 """
 
+def green(key):
+    return {"key": key, "class": "green"}
 
-def held(key):
-    return {"key": key, "class": "held"}
+def purple(key):
+    return {"key": key, "class": "purple"}
 
+def yellow(key):
+    return {"key": key, "class": "yellow"}
+
+def blue(key):
+    return {"key": key, "class": "blue"}
+
+def pink(key):
+    return {"key": key, "class": "pink"}
+
+def grey(key):
+    return {"key": key, "class": "grey"}
+
+def red(key):
+    return {"key": key, "class": "red"}
+
+def none(): # no text, transparent key
+    return {"key": "", "class": "none"}
 
 KEYMAP = [
-    {
+    {   # base layer
         "left": [
-            ["q", "w", "f", "p", "g"],
-            ["a", "r", "s", "t", "d"],
-            ["z", "x", "c", "v", "b"],
+            ["j", "w", "h", "p", "b"],
+            ["c", "s", "n", "t", "g"],
+            ["\" '", "f", "l", "d", "v"],
         ],
         "right": [
-            ["j", "l", "u", "y", "'"],
-            ["h", "n", "e", "i", "o"],
-            ["k", "m", ",", ".", ";"],
+            ["? /", "m", "u", "a", "# @"],
+            ["_ -", "r", "e", "o", "i"],
+            ["~ `", "k", "; ,", ": .", "y"],
         ],
-        "thumbs": {"left": ["nav", "shift"], "right": ["space", "sym"],},
+        "thumbs": {"left": ["nav", "space"], "right": ["shift", "num"],},
     },
-    {
+    {   # nav layer
         "left": [
-            ["esc", "[", "{", "(", "~"],
-            ["-", "*", "=", "_", "$"],
-            ["+", "|", "@", "/", "%"],
+            ["esc", "prev", "play", "next", "vol up"],
+            ["ctrl", "alt", "shift", "cmd", "vol down"],
+            ["undo", "cut", "copy", "paste", "mute"],
         ],
         "right": [
-            ["^", ")", "}", "]", "`"],
-            ["#", "cmd", "alt", "ctrl", "shift"],
-            ["", "\\", "&amp;", "?", "!"],
+            ["", "shift tab", "up", "tab", ""],
+            ["", "left", "down", "right", ""],
+            ["", "bspc", "caps", "del", ""],
         ],
-        "thumbs": {"left": ["nav", "shift"], "right": ["space", held("sym")],},
+        "thumbs": {"left": [red("nav"), ""], "right": ["enter", "num"],},
     },
-    {
+    {    # num layer
         "left": [
-            ["tab", "swap win", "tab left", "tab right", "vol up"],
-            ["shift", "ctrl", "alt", "cmd", "vol down"],
-            ["space left", "space right", "back", "fwd", "play"],
+            ["", "7", "8", "9", ""],
+            ["", "4", "5", "6", ""],
+            ["", "1", "2", "3", ""],
         ],
         "right": [
-            ["reset", "home", "up", "end", "del"],
-            ["caps lock", "left", "down", "right", "bspc"],
-            ["", "page down", "page up", "swap lang", "enter"],
+            ["", "", "", "", ""],
+            ["", "cmd", "shift", "alt", "ctrl"],
+            ["", "", "", "", ""],
         ],
-        "thumbs": {"left": [held("nav"), "shift"], "right": ["space", "sym"],},
+        "thumbs": {"left": ["nav", "0"], "right": ["", red("num")],},
     },
-    {
+    {   # sym layer
         "left": [
-            ["7", "5", "3", "1", "9"],
-            ["shift", "ctrl", "alt", "cmd", "f11"],
-            ["f7", "f5", "f3", "f1", "f9"],
+            ["%", "^", "$", "€", "£"],
+            ["/", "*", "-", "+", "\\"],
+            ["|", "&amp;", "!", "=", "º"],
+        ],
+        "right": [ # magnet shortcuts (window management)
+            ["", "left 2/3rd", "hide win", "right 2/3rd", ""],
+            ["", "left half", "full screen", "right half", ""],
+            ["", "left 3rd", "middle 3rd", "right 3rd", ""],
+        ],
+        "thumbs": {"left": [red("nav"), ""], "right": ["", red("num")],},
+    },
+    {   # combos, outer horizontal
+        "left": [ # &#60; is <
+            [green("esc"), green("esc"), blue("{"), blue("{"), ""],
+            [purple("&#60;"), purple("&#60;"), pink("("), pink("("), ""],
+            [yellow(""), yellow(""), grey("["), grey("["), ""],
+        ],
+        "right": [ # &#62; is >
+            ["", blue("}"), blue("}"), green(""), green("")],
+            ["", pink(")"), pink(")"), purple("&#62;"), purple("&#62;")],
+            ["", grey("]"), grey("]"), yellow(""), yellow("")],
+        ],
+        "thumbs": {"left": ["", ""],"right": ["", ""],},
+    },
+    {   # combos, inner horizontal
+        "left": [
+            ["", green("Q"), green("Q"), blue("screen shot"), blue("screen shot")],
+            ["", purple("X"), purple("X"), pink("search"), pink("search")],
+            ["", yellow("Z"), yellow("Z"), grey("lock"), grey("lock")],
         ],
         "right": [
-            ["8", "0", "2", "4", "6"],
-            ["f10", "cmd", "alt", "ctrl", "shift"],
-            ["f8", "f12", "f2", "f4", "f6"],
+            [blue("select all"), blue("select all"), green("Æ"), green("Æ"), ""],
+            [pink("save"), pink("save"), purple("Å"), purple("Å"), ""],
+            [grey("lock"), grey("lock"), yellow("Ø"), yellow("Ø"), ""],
         ],
-        "thumbs": {
-            "left": [held("nav"), "shift"],
-            "right": ["space", held("sym")],
-        },
+        "thumbs": {"left": ["", ""],"right": ["", ""],},
+    },
+    { # cross hand combos for bluetooth stuff on ZMK
+        "left": [
+            ["", pink("reset"), pink("reset"), pink("reset"), blue("boot load")],
+            ["", green("bt 0"), green("bt 0"), green("bt 0"), purple("bt 1")],
+            ["", yellow("bt clear"), yellow("bt clear"), yellow("bt clear"), grey("out tggl")],
+        ],
+        "right": [
+            [pink("reset"), blue("boot load"), blue("boot load"), blue("boot load"), ""],
+            [green("bt 0"), purple("bt 1"), purple("bt 1"), purple("bt 1"), ""],
+            [yellow("bt clear"), grey("out tggl"), grey("out tggl"), grey("out tggl"), ""],
+        ],
+        "thumbs": {"left": ["", ""],"right": ["", ""],},
     },
 ]
 
@@ -96,7 +184,7 @@ HAND_H = 4 * KEYSPACE_H
 LAYER_W = 2 * HAND_W + OUTER_PAD_W
 LAYER_H = HAND_H
 BOARD_W = LAYER_W + 2 * OUTER_PAD_W
-BOARD_H = 4 * LAYER_H + 5 * OUTER_PAD_H
+BOARD_H = len(KEYMAP) * LAYER_H + (len(KEYMAP) + 1) * OUTER_PAD_H
 
 
 def print_key(x, y, key):
