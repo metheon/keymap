@@ -106,9 +106,9 @@ KEYMAP = [
         "right": [
             ["", "shift tab", "up", "tab", ""],
             ["", "left", "down", "right", ""],
-            ["", "bspc", "caps", "del", ""],
+            ["", "enter", "", "", ""],
         ],
-        "thumbs": {"left": [red("nav"), ""], "right": ["enter", "num"],},
+        "thumbs": {"left": [red("nav"), ""], "right": ["del bspc", "num"],},
     },
     {    # num layer
         "left": [
@@ -130,9 +130,9 @@ KEYMAP = [
             ["|", "&amp;", "!", "=", "º"],
         ],
         "right": [ # magnet shortcuts (window management)
-            ["", "left 2/3rd", "hide win", "right 2/3rd", ""],
-            ["", "left half", "full screen", "right half", ""],
-            ["", "left 3rd", "middle 3rd", "right 3rd", ""],
+            ["", "left 2/3rd", "left half", "right half", "right 2/3rd"],
+            ["", "cmd", "shift", "alt", "ctrl"],
+            ["", "left 3rd", "middle 3rd", "right 3rd", "full screen"],
         ],
         "thumbs": {"left": [red("nav"), ""], "right": ["", red("num")],},
     },
