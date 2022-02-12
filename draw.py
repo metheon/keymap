@@ -152,7 +152,7 @@ KEYMAP = [
     {   # combos, inner horizontal
         "left": [
             ["", green("Q"), green("Q"), blue("screen shot"), blue("screen shot")],
-            ["", purple("X"), purple("X"), pink("search"), pink("search")],
+            ["", purple("X"), purple("X"), pink("swap win"), pink("swap win")],
             ["", yellow("Z"), yellow("Z"), grey("lock"), grey("lock")],
         ],
         "right": [
