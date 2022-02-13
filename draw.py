@@ -99,14 +99,14 @@ KEYMAP = [
     },
     {   # nav layer
         "left": [
-            ["esc", "prev", "play", "next", "vol up"],
-            ["ctrl", "alt", "shift", "cmd", "vol down"],
-            ["undo", "cut", "copy", "paste", "mute"],
+            ["esc", "back", "fwd", "swap win", "screen shot"],
+            ["ctrl", "alt", "shift", "cmd", "search"],
+            ["undo", "cut", "copy", "paste", "lock"],
         ],
         "right": [
-            ["", "shift tab", "up", "tab", ""],
-            ["", "left", "down", "right", ""],
-            ["", "enter", "", "", ""],
+            ["page up", "shift tab", "up", "tab", ""],
+            ["page down", "left", "down", "right", ""],
+            ["swap lang", "home", "enter", "end", ""],
         ],
         "thumbs": {"left": [red("nav"), ""], "right": ["del bspc", "num"],},
     },
@@ -151,14 +151,14 @@ KEYMAP = [
     },
     {   # combos, inner horizontal
         "left": [
-            ["", green("Q"), green("Q"), blue("screen shot"), blue("screen shot")],
-            ["", purple("X"), purple("X"), pink("swap win"), pink("swap win")],
-            ["", yellow("Z"), yellow("Z"), grey("lock"), grey("lock")],
+            ["", green("Q"), green("Q"), blue("vol up"), blue("vol up")],
+            ["", purple("X"), purple("X"), pink("vol down"), pink("vol down")],
+            ["", yellow("Z"), yellow("Z"), grey("mute"), grey("mute")],
         ],
         "right": [
-            [blue("select all"), blue("select all"), green("Æ"), green("Æ"), ""],
-            [pink("save"), pink("save"), purple("Å"), purple("Å"), ""],
-            [grey("lock"), grey("lock"), yellow("Ø"), yellow("Ø"), ""],
+            [blue("next"), blue("next"), green("Æ"), green("Æ"), ""],
+            [pink("play"), pink("play"), purple("Å"), purple("Å"), ""],
+            [grey("prev"), grey("prev"), yellow("Ø"), yellow("Ø"), ""],
         ],
         "thumbs": {"left": ["", ""],"right": ["", ""],},
     },
