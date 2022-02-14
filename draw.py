@@ -95,7 +95,7 @@ KEYMAP = [
             ["_ -", "r", "e", "o", "i"],
             ["~ `", "k", "; ,", ": .", "y"],
         ],
-        "thumbs": {"left": ["nav", "space"], "right": ["shift", "num"],},
+        "thumbs": {"left": ["nav", "_ space"], "right": ["shift", "num"],},
     },
     {   # nav layer
         "left": [
