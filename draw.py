@@ -86,25 +86,25 @@ def none(): # no text, transparent key
 KEYMAP = [
     {   # base layer
         "left": [
-            ["j", "w", "h", "p", "b"],
+            [none(), "w", "h", "p", "b"],
             ["c", "s", "n", "t", "g"],
-            ["\" '", "f", "l", "d", "v"],
+            ["j", "f", "l", "d", "v"],
         ],
         "right": [
-            ["? /", "m", "u", "a", "# @"],
-            ["_ -", "r", "e", "o", "i"],
+            ["? /", "m", "u", "a", none()],
+            ["\" '", "r", "e", "o", "i"],
             ["~ `", "k", "; ,", ": .", "y"],
         ],
-        "thumbs": {"left": ["nav", "space"], "right": ["shift", "num"],},
+        "thumbs": {"left": ["nav", "_ space"], "right": ["shift", "num"],},
     },
     {   # nav layer
         "left": [
-            ["esc", "back", "fwd", "swap win", "screen shot"],
-            ["ctrl", "alt", "shift", "cmd", "search"],
+            [none(), "back", "fwd", "swap win", "screen shot"],
+            ["ctrl", "alt", "shift", "cmd", "esc"],
             ["undo", "cut", "copy", "paste", "lock"],
         ],
         "right": [
-            ["page up", "shift tab", "up", "tab", ""],
+            ["page up", "shift tab", "up", "tab", none()],
             ["page down", "left", "down", "right", ""],
             ["swap lang", "home", "enter", "end", ""],
         ],
@@ -112,66 +112,66 @@ KEYMAP = [
     },
     {    # num layer
         "left": [
-            ["", "7", "8", "9", ""],
-            ["", "4", "5", "6", ""],
+            [none(), "7", "8", "9", ""],
+            ["", "4", "% 5", "6", ""],
             ["", "1", "2", "3", ""],
         ],
         "right": [
-            ["", "", "", "", ""],
+            ["", "", "", "", none()],
             ["", "cmd", "shift", "alt", "ctrl"],
             ["", "", "", "", ""],
         ],
-        "thumbs": {"left": ["nav", "0"], "right": ["", red("num")],},
+        "thumbs": {"left": ["nav", "º 0"], "right": ["", red("num")],},
     },
     {   # sym layer
         "left": [
-            ["%", "^", "$", "€", "£"],
+            [none(), "^", "$", "#", "@"],
             ["/", "*", "-", "+", "\\"],
-            ["|", "&amp;", "!", "=", "º"],
+            ["|", "&amp;", "!", "=", "£ €"],
         ],
         "right": [ # magnet shortcuts (window management)
+            ["", "left 3rd", "middle 3rd", "right 3rd", none()],
+            ["full screen", "cmd", "shift", "alt", "ctrl"],
             ["", "left 2/3rd", "left half", "right half", "right 2/3rd"],
-            ["", "cmd", "shift", "alt", "ctrl"],
-            ["", "left 3rd", "middle 3rd", "right 3rd", "full screen"],
         ],
         "thumbs": {"left": [red("nav"), ""], "right": ["", red("num")],},
     },
     {   # combos, outer horizontal
         "left": [ # &#60; is <
-            [green("esc"), green("esc"), blue("{"), blue("{"), ""],
+            [none(), "", blue("{"), blue("{"), ""],
             [purple("&#60;"), purple("&#60;"), pink("("), pink("("), ""],
-            [yellow(""), yellow(""), grey("["), grey("["), ""],
+            [yellow(""), yellow(""), green("["), green("["), ""],
         ],
         "right": [ # &#62; is >
-            ["", blue("}"), blue("}"), green(""), green("")],
+            ["", blue("}"), blue("}"), "", none()],
             ["", pink(")"), pink(")"), purple("&#62;"), purple("&#62;")],
-            ["", grey("]"), grey("]"), yellow(""), yellow("")],
+            ["", green("]"), green("]"), yellow(""), yellow("")],
         ],
         "thumbs": {"left": ["", ""],"right": ["", ""],},
     },
     {   # combos, inner horizontal
         "left": [
-            ["", green("Q"), green("Q"), blue("vol up"), blue("vol up")],
+            [none(), grey("Q"), grey("Q"), blue("vol up"), blue("vol up")],
             ["", purple("X"), purple("X"), pink("vol down"), pink("vol down")],
-            ["", yellow("Z"), yellow("Z"), grey("mute"), grey("mute")],
+            ["", yellow("Z"), yellow("Z"), green("mute"), green("mute")],
         ],
         "right": [
-            [blue("next"), blue("next"), green("Æ"), green("Æ"), ""],
+            [blue("next"), blue("next"), grey("Æ"), grey("Æ"), none()],
             [pink("play"), pink("play"), purple("Å"), purple("Å"), ""],
-            [grey("prev"), grey("prev"), yellow("Ø"), yellow("Ø"), ""],
+            [green("prev"), green("prev"), yellow("Ø"), yellow("Ø"), ""],
         ],
         "thumbs": {"left": ["", ""],"right": ["", ""],},
     },
     { # cross hand combos for bluetooth stuff on ZMK
         "left": [
-            ["", pink("reset"), pink("reset"), pink("reset"), blue("boot load")],
+            [none(), pink("reset"), pink("reset"), pink("reset"), blue("boot load")],
             ["", green("bt 0"), green("bt 0"), green("bt 0"), purple("bt 1")],
             ["", yellow("bt clear"), yellow("bt clear"), yellow("bt clear"), grey("out tggl")],
         ],
         "right": [
             [pink("reset"), blue("boot load"), blue("boot load"), blue("boot load"), ""],
             [green("bt 0"), purple("bt 1"), purple("bt 1"), purple("bt 1"), ""],
-            [yellow("bt clear"), grey("out tggl"), grey("out tggl"), grey("out tggl"), ""],
+            [yellow("bt clear"), grey("out tggl"), grey("out tggl"), grey("out tggl"), none()],
         ],
         "thumbs": {"left": ["", ""],"right": ["", ""],},
     },
