@@ -121,13 +121,13 @@ KEYMAP = [
             ["", "cmd", "shift", "alt", "ctrl"],
             ["", "", "", "", ""],
         ],
-        "thumbs": {"left": ["nav", "0"], "right": ["", red("num")],},
+        "thumbs": {"left": ["nav", "º 0"], "right": ["", red("num")],},
     },
     {   # sym layer
         "left": [
-            ["%", "^", "$", "€", "£"],
+            ["%", "^", "$", "£ €", ""],
             ["/", "*", "-", "+", "\\"],
-            ["|", "&amp;", "!", "=", "º"],
+            ["|", "&amp;", "!", "=", ""],
         ],
         "right": [ # magnet shortcuts (window management)
             ["", "left 2/3rd", "left half", "right half", "right 2/3rd"],
