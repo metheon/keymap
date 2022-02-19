@@ -132,7 +132,7 @@ KEYMAP = [
         "right": [ # magnet shortcuts (window management)
             ["", "left 2/3rd", "left half", "right half", "right 2/3rd"],
             ["", "cmd", "shift", "alt", "ctrl"],
-            ["", "left 3rd", "middle 3rd", "right 3rd", "full screen"],
+            ["``` ```", "left 3rd", "middle 3rd", "right 3rd", "full screen"],
         ],
         "thumbs": {"left": [red("nav"), ""], "right": ["", red("num")],},
     },
