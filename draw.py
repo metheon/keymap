@@ -151,14 +151,27 @@ KEYMAP = [
     },
     {   # combos, inner horizontal
         "left": [
-            ["", green("Q"), green("Q"), blue("vol up"), blue("vol up")],
-            ["", purple("X"), purple("X"), pink("vol down"), pink("vol down")],
-            ["", yellow("Z"), yellow("Z"), grey("mute"), grey("mute")],
+            ["", green("Q"), green("Q"), blue(""), blue("")],
+            ["", purple("X"), purple("X"), pink(""), pink("")],
+            ["", yellow("Z"), yellow("Z"), grey(""), grey("")],
         ],
         "right": [
-            [blue("next"), blue("next"), green("Æ"), green("Æ"), ""],
-            [pink("play"), pink("play"), purple("Å"), purple("Å"), ""],
-            [grey("prev"), grey("prev"), yellow("Ø"), yellow("Ø"), ""],
+            [blue(""), blue(""), green("Æ"), green("Æ"), ""],
+            [pink(""), pink(""), purple("Å"), purple("Å"), ""],
+            [grey(""), grey(""), yellow("Ø"), yellow("Ø"), ""],
+        ],
+        "thumbs": {"left": ["", ""],"right": ["", ""],},
+    },
+    { # tripple key combos
+        "left": [
+            ["", pink("vol up"), pink("vol up"), pink("vol up"), ""],
+            ["", green("vol down"), green("vol down"), green("vol down"), ""],
+            ["", yellow("mute"), yellow("mute"), yellow("mute"), ""],
+        ],
+        "right": [
+            ["", blue("next"), blue("next"), blue("next"), ""],
+            ["", purple("play"), purple("play"), purple("play"), ""],
+            ["", grey("prev"), grey("prev"), grey("prev"), ""],
         ],
         "thumbs": {"left": ["", ""],"right": ["", ""],},
     },
