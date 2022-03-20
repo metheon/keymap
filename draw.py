@@ -86,12 +86,12 @@ def none(): # no text, transparent key
 KEYMAP = [
     {   # base layer
         "left": [
-            ["~ `", "w", "f", "p", "b"],
+            ["q", "w", "f", "p", "b"],
             ["a", "r", "s", "t", "g"],
-            ["\" '", "! -", "c", "d", "v"],
+            ["z", "x", "c", "d", "v"],
         ],
         "right": [
-            ["j", "l", "u", "y", "@ #"],
+            ["j", "l", "u", "y", "\" '"],
             ["m", "n", "e", "i", "o"],
             ["k", "h", "; ,", ": .", "? /"],
         ],
@@ -104,24 +104,24 @@ KEYMAP = [
             ["undo", "cut", "copy", "paste", "lock"],
         ],
         "right": [
-            ["page up", "shift tab", "up", "tab", ""],
-            ["page down", "left", "down", "right", ""],
-            ["swap lang", "home", "enter", "end", ""],
+            ["", "shift tab", "up", "tab", ""],
+            ["game layer", "left", "down", "right", "enter"],
+            ["swap lang", "æ", "ø", "å", ""],
         ],
-        "thumbs": {"left": [red("nav"), ""], "right": ["del bspc", "num"],},
+        "thumbs": {"left": [green("nav"), ""], "right": ["del bspc", "num"],},
     },
     {    # num layer
         "left": [
-            ["", "7", "8", "9", ""],
-            ["", "4", "5", "6", ""],
-            ["", "1", "2", "3", ""],
+            ["", "7", "8", "9", "vol up"],
+            ["", "4", "5", "6", "vol dn"],
+            ["", "1", "2", "3", "vol mute"],
         ],
-        "right": [
-            ["", "", "", "", ""],
-            ["", "cmd", "shift", "alt", "ctrl"],
-            ["", "", ",", ".", ""],
+        "right": [ # magnet shortcuts (window management)
+            ["next", "left 2/3rd", "left half", "right half", "right 2/3rd"],
+            ["play", "cmd", "shift", "alt", "ctrl"],
+            ["prev", "left 3rd", "middle 3rd", "right 3rd", "full screen"],
         ],
-        "thumbs": {"left": ["nav", "º 0"], "right": ["", red("num")],},
+        "thumbs": {"left": ["nav", "º 0"], "right": ["", green("num")],},
     },
     {   # sym layer
         "left": [
@@ -129,62 +129,62 @@ KEYMAP = [
             ["/", "*", "-", "+", "\\"],
             ["|", "&amp;", "!", "=", ""],
         ],
-        "right": [ # magnet shortcuts (window management)
-            ["", "left 2/3rd", "left half", "right half", "right 2/3rd"],
-            ["", "cmd", "shift", "alt", "ctrl"],
-            ["``` ```", "left 3rd", "middle 3rd", "right 3rd", "full screen"],
+        "right": [ # &#60; is < and &#62; is >
+            ["", "{", "}", "@", "#"],
+            ["", "(", ")", "&#60;", "&#62;"],
+            ["``` ```", "[", "]", "~", "`"],
         ],
-        "thumbs": {"left": [red("nav"), ""], "right": ["", red("num")],},
-    },
-    {   # combos, outer horizontal
-        "left": [ # &#60; is <
-            [green("esc"), green("esc"), blue("{"), blue("{"), ""],
-            [purple("&#60;"), purple("&#60;"), pink("("), pink("("), ""],
-            [yellow(""), yellow(""), grey("["), grey("["), ""],
-        ],
-        "right": [ # &#62; is >
-            ["", blue("}"), blue("}"), green(""), green("")],
-            ["", pink(")"), pink(")"), purple("&#62;"), purple("&#62;")],
-            ["", grey("]"), grey("]"), yellow(""), yellow("")],
-        ],
-        "thumbs": {"left": ["", ""],"right": ["", ""],},
-    },
-    {   # combos, inner horizontal
+        "thumbs": {"left": [green("nav"), ""], "right": ["", green("num")],},
+    }, 
+    {   # game base layer
         "left": [
-            ["", green("Q"), green("Q"), blue(""), blue("")],
-            ["", purple("X"), purple("X"), pink(""), pink("")],
-            ["", yellow("Z"), yellow("Z"), grey(""), grey("")],
+            ["1", "2", "3", "4", "5"],
+            ["tab", "q", "w", "e", "r"],
+            ["f1", "a", "s", "d", "f"],
+        ],
+        "right": [ # empty right hand side
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+        ],
+        "thumbs": {"left": ["esc sec", "space prm"], "right": ["", ""],},
+    }, 
+    {   # game primary layer
+        "left": [
+            ["⇧1", "⇧2", "⇧3", "⇧4", "⇧5"],
+            ["n", "⇧q", "w", "⇧e", "⇧r"],
+            ["p", "b", "c", "m", "⇧f"],
+        ],
+        "right": [ # empty right hand side
+            ["", "", "", "", ""],
+            ["base layer", "", "", "", ""],
+            ["", "", "", "", ""],
+        ],
+        "thumbs": {"left": ["", green("prm")], "right": ["", ""],},
+    }, 
+    {   # game secondary layer
+        "left": [
+            ["⌃1", "⌃2", "⌃3", "⌃4", "⌃5"],
+            ["", "⌃q", "w", "⌃e", "⌃r"],
+            ["", "", "", "", "⌃f"],
+        ],
+        "right": [ # empty right hand side
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+        ],
+        "thumbs": {"left": [green("sec"), "shift"], "right": ["", ""],},
+    }, 
+    { # cross hand combo for reset
+        "left": [
+            ["", "", "", "", ""],
+            ["", red("reset"), red("reset"), red("reset"), ""],
+            ["", "", "", "", ""],
         ],
         "right": [
-            [blue(""), blue(""), green("Æ"), green("Æ"), ""],
-            [pink(""), pink(""), purple("Å"), purple("Å"), ""],
-            [grey(""), grey(""), yellow("Ø"), yellow("Ø"), ""],
-        ],
-        "thumbs": {"left": ["", ""],"right": ["", ""],},
-    },
-    { # tripple key combos
-        "left": [
-            ["", pink("vol up"), pink("vol up"), pink("vol up"), ""],
-            ["", green("vol down"), green("vol down"), green("vol down"), ""],
-            ["", yellow("mute"), yellow("mute"), yellow("mute"), ""],
-        ],
-        "right": [
-            ["", blue("next"), blue("next"), blue("next"), ""],
-            ["", purple("play"), purple("play"), purple("play"), ""],
-            ["", grey("prev"), grey("prev"), grey("prev"), ""],
-        ],
-        "thumbs": {"left": ["", ""],"right": ["", ""],},
-    },
-    { # cross hand combos for bluetooth stuff on ZMK
-        "left": [
-            ["", pink("reset"), pink("reset"), pink("reset"), blue("boot load")],
-            ["", green("bt 0"), green("bt 0"), green("bt 0"), purple("bt 1")],
-            ["", yellow("bt clear"), yellow("bt clear"), yellow("bt clear"), grey("out tggl")],
-        ],
-        "right": [
-            [pink("reset"), blue("boot load"), blue("boot load"), blue("boot load"), ""],
-            [green("bt 0"), purple("bt 1"), purple("bt 1"), purple("bt 1"), ""],
-            [yellow("bt clear"), grey("out tggl"), grey("out tggl"), grey("out tggl"), ""],
+            ["", "", "", "", ""],
+            ["", red("reset"), red("reset"), red("reset"), ""],
+            ["", "", "", "", ""],
         ],
         "thumbs": {"left": ["", ""],"right": ["", ""],},
     },
