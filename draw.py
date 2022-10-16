@@ -105,7 +105,7 @@ KEYMAP = [
         ],
         "right": [
             ["", "shift tab", "up", "tab", ""],
-            ["game layer", "left", "down", "right", "enter"],
+            ["", "left", "down", "right", "enter"],
             ["swap lang", "æ", "ø", "å", ""],
         ],
         "thumbs": {"left": [green("nav"), ""], "right": ["del bspc", "num"],},
@@ -135,45 +135,6 @@ KEYMAP = [
             ["``` ```", "[", "]", "~", "`"],
         ],
         "thumbs": {"left": [green("nav"), ""], "right": ["", green("num")],},
-    }, 
-    {   # game base layer
-        "left": [
-            ["1", "2", "3", "4", "5"],
-            ["tab", "q", "w", "e", "r"],
-            ["f1", "a", "s", "d", "f"],
-        ],
-        "right": [ # empty right hand side
-            ["", "", "", "", ""],
-            ["", "", "", "", ""],
-            ["", "", "", "", ""],
-        ],
-        "thumbs": {"left": ["esc sec", "space prm"], "right": ["", ""],},
-    }, 
-    {   # game primary layer
-        "left": [
-            ["⇧1", "⇧2", "⇧3", "⇧4", "⇧5"],
-            ["n", "⇧q", "w", "⇧e", "⇧r"],
-            ["p", "b", "c", "m", "⇧f"],
-        ],
-        "right": [ # empty right hand side
-            ["", "", "", "", ""],
-            ["base layer", "", "", "", ""],
-            ["", "", "", "", ""],
-        ],
-        "thumbs": {"left": ["", green("prm")], "right": ["", ""],},
-    }, 
-    {   # game secondary layer
-        "left": [
-            ["⌃1", "⌃2", "⌃3", "⌃4", "⌃5"],
-            ["", "⌃q", "w", "⌃e", "⌃r"],
-            ["", "", "", "", "⌃f"],
-        ],
-        "right": [ # empty right hand side
-            ["", "", "", "", ""],
-            ["", "", "", "", ""],
-            ["", "", "", "", ""],
-        ],
-        "thumbs": {"left": [green("sec"), "shift"], "right": ["", ""],},
     }, 
     { # cross hand combo for reset
         "left": [
