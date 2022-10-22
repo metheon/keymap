@@ -105,7 +105,7 @@ KEYMAP = [
         ],
         "right": [
             ["", "shift tab", "up", "tab", ""],
-            ["", "left", "down", "right", "enter"],
+            ["emoji", "left", "down", "right", "enter"],
             ["swap lang", "æ", "ø", "å", ""],
         ],
         "thumbs": {"left": [green("nav"), ""], "right": ["del bspc", "num"],},
